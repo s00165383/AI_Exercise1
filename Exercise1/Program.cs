@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace Exercise1
 {
@@ -31,7 +33,7 @@ namespace Exercise1
             Person Mary = new Person("Mary", Gender.Female);
             Person Victoria = new Person("Victoria", Gender.Female);
             Person Jemima = new Person("Jemima", Gender.Female);
-            Console.WriteLine(Paul.Name);
+            //Console.WriteLine(Paul.Name);
             Paul.Children.Add(Fred);
             Fred.Parents.Add(Paul);
             Paul.Children.Add(Jemima);
@@ -40,6 +42,13 @@ namespace Exercise1
             Fred.Parents.Add(Mary);
             Paul.Children.Add(Mary);
             Mary.Parents.Add(Paul);
+
+
+            foreach (Person person in Fred.Parents.ToList())
+            {
+                Console.WriteLine("{0} is Fred's Parent",person.Name);
+            }
+
 
 
         }
