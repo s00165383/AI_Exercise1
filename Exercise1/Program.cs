@@ -14,21 +14,23 @@ namespace Exercise1
         public Person(string name, Gender gender)
         {
             this.Name = name;
-            this.Gender = gender;         
+            this.Gender = gender;
+            this.Parents = new List<Person>();
+            this.Children = new List<Person>();
         }
     }
 
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            var Paul = new Person("Paul",Gender.Male);
-            var Fred = new Person("Fred", Gender.Male);
-            var Bill = new Person("Bill", Gender.Male);
-            var Mary = new Person("Mary", Gender.Female);
-            var Victoria = new Person("Victoria", Gender.Female);
-            var Jemima = new Person("Jemima", Gender.Female);
+            Person Paul = new Person("Paul",Gender.Male);
+            Person Fred = new Person("Fred", Gender.Male);
+            Person Bill = new Person("Bill", Gender.Male);
+            Person Mary = new Person("Mary", Gender.Female);
+            Person Victoria = new Person("Victoria", Gender.Female);
+            Person Jemima = new Person("Jemima", Gender.Female);
             Console.WriteLine(Paul.Name);
             Paul.Children.Add(Fred);
             Fred.Parents.Add(Paul);
